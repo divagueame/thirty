@@ -1,0 +1,9 @@
+<main class="container">
+  <%= link_to sanitize("&larr; Back to day"), day_path(@day) %>
+
+  <div class="header">
+    <h1>Edit day</h1>
+  </div>
+
+  <%= render "form", day: @day %>
+</main>

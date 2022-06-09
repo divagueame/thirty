@@ -1,0 +1,5 @@
+<%= form_with  model: @day do |form| %>
+  <%= form.label :done, "Done?" %>
+  <%= form.check_box :done %>
+  <%= form.submit "Send" %>
+<% end %>

@@ -1,0 +1,13 @@
+
+<div class="day">
+  <%= link_to 'Pun', day_path(day) %>
+  <div class="day__actions">
+    <%= button_to "Delete",
+                  day_path(day),
+                  method: :delete,
+                  class: "btn btn--light" %>
+    <%= link_to "Edit",
+                edit_day_path(day),
+                class: "btn btn--light" %>
+  </div>
+</div>
