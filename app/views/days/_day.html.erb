@@ -1,7 +1,12 @@
 
-<div class="day">
-  <%= link_to 'Pun', day_path(day) %>
-  <div class="day__actions">
+<div class="day flex gap-16">
+  <%= link_to day_path(day), class: "bg-blue-300" do %>
+    <% if day.done %>
+      <h1>X</h1>
+    <% end %>
+  <% end %>
+  
+  <div class="day__actions flex gap-8">
     <%= button_to "Delete",
                   day_path(day),
                   method: :delete,
