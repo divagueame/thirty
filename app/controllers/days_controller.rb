@@ -17,7 +17,12 @@ class DaysController < ApplicationController
       @day = Day.new(day_params)
   
       if @day.save
-        redirect_to days_path, notice: "Day was successfully created."
+        respond_to do |format|
+          format.html {
+            redirect_to days_path, notice: "Day was successfully created."
+          }
+          format.turbo_stream
+        end
       else
         render :new
       end
@@ -36,7 +41,11 @@ class DaysController < ApplicationController
   
     def destroy
       @day.destroy
-      redirect_to days_path, notice: "day was successfully destroyed."
+      respond_to do |format|
+        format.html {redirect_to days_path, notice: "day was successfully destroyed."}
+        format.turbo_stream
+      end
+      
     end
   
     private

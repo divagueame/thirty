@@ -1,12 +1,16 @@
 <main class="container">
-<%= turbo_frame_tag 'first_turbo' do %>
   <div class="header">
     <h1>Days</h1>
     <%= link_to "New day",
                 new_day_path,
+                data: { turbo_frame: dom_id(Day.new) },
                 class: "btn btn--primary" %>
   </div>
-<% end %>
 
+
+  <%= turbo_frame_tag Day.new %>
+
+  <%= turbo_frame_tag 'days' do %>
   <%= render @days %>
+  <% end %>
 </main>

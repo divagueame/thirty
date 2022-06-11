@@ -4,6 +4,7 @@
   <div class="header">
     <h1>Edit day</h1>
   </div>
-
-  <%= render "form", day: @day %>
+  <%= turbo_frame_tag @day do%>
+    <%= render "form", day: @day %>
+  <% end %>
 </main>

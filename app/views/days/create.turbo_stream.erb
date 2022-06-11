@@ -1,0 +1,2 @@
+<%= turbo_stream.prepend 'days', partial: 'days/day', locals: {day: @day} %>
+<%= turbo_stream.update Day.new, "" %>

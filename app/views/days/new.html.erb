@@ -1,9 +1,12 @@
 <main class="container">
+
   <%= link_to sanitize("&larr; Back to daysd"), days_path %>
 
   <div class="header">
     <h1>New day</h1>
   </div>
 
+<%= turbo_frame_tag @day do%>
   <%= render "form", day: @day %>
+<% end %>
 </main>
