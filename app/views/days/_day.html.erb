@@ -3,6 +3,9 @@
       <%= link_to day_path(day), class: "bg-blue-300" do %>
         <% if day.done %>
           <h1>X</h1>
+
+        <% else %>
+          <h1>-</h1>
         <% end %>
       <% end %>
       
@@ -11,7 +14,7 @@
                       day_path(day),
                       method: :delete,
                       class: "btn btn--light" %>
-        <%= link_to "Edit",
+        <%= link_to "Toggle",
                     edit_day_path(day),
                     class: "btn btn--light" %>
       </div>

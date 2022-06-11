@@ -1,6 +1,4 @@
-<%= form_with  model: @day do |form| %>
-  <%= form.label :done, "Done?" %>
-  <%= form.check_box :done %>
-  <%= link_to 'Nah...', days_path %>
-  <%= form.submit "Send" %>
+<%= form_with  model: @day do |form| %> 
+        <%= form.hidden_field :done, value: true %>
+  <%= form.submit "Done!" %>
 <% end %>

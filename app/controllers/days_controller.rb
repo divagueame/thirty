@@ -3,6 +3,7 @@ class DaysController < ApplicationController
 
     def index
       @days = Day.ordered
+      @day = Day.new
     end
   
     def show
@@ -15,16 +16,15 @@ class DaysController < ApplicationController
   
     def create
       @day = Day.new(day_params)
-  
       if @day.save
         respond_to do |format|
           format.html {
             redirect_to days_path, notice: "Day was successfully created."
+            format.turbo_stream
           }
-          format.turbo_stream
         end
       else
-        render :new
+        render :new, status: :unprocessable_entity
       end
     end
   

@@ -1,16 +1,17 @@
+
+<%= turbo_stream_from "days" %>
 <main class="container">
   <div class="header">
     <h1>Days</h1>
-    <%= link_to "New day",
-                new_day_path,
-                data: { turbo_frame: dom_id(Day.new) },
-                class: "btn btn--primary" %>
-  </div>
+ 
+<hr>
+<hr>
+    <%= render "form", day: @day %>
 
-
-  <%= turbo_frame_tag Day.new %>
+<hr>
+<hr>
 
   <%= turbo_frame_tag 'days' do %>
-  <%= render @days %>
+    <%= render @days %>
   <% end %>
 </main>
