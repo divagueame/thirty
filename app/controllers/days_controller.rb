@@ -2,7 +2,7 @@ class DaysController < ApplicationController
     before_action :set_day, only: [:show, :edit, :update, :destroy]
 
     def index
-      @days = Day.all
+      @days = Day.ordered
     end
   
     def show
